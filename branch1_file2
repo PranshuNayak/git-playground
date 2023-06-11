@@ -1,0 +1,2 @@
+Hi this is file 2 for branch 2 . It has no conflicts till now .
+I will stage this file create a commit and then rebase branch1 on main
