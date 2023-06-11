@@ -1,0 +1,38 @@
+initialize - git init
+
+when a file is not addedusing the git add command git does not track the file
+that means even if we delete the file then git won't say that file deleted when 
+we do git status
+even if content is changes it won't say content is modified.
+
+Now let's talk about a staged file
+so if we staged a file and deleted it we can resotre it using git (no need to go
+inside the recycle bin and restore) also if we have commited till c1 and have added 
+new content we can restore
+git restore --staged
+eg- git restore sample
+
+
+let say we have also commited c2 now we want to switch to c1
+do -- git checkout c1
+
+sometimes it may happen that we want to switch to c2 again but
+git log does not show the header of it
+use git reflog to show all the will display a list of all the recent reference changes, including the commits and HEAD positions
+
+when we directly checkout on a commit our HEAD is detached
+that means HEAD does not point to a branch it points to a specific commit
+to re attach a HEAD use
+git checkout <branch name>
+
+Let's talk about branch checkout
+1. we can checkout on uncommited , unstaged files
+2. git log is interesting 
+eg . commit 3fcc8bc813e34558464015b5a2a3ef341d65d2fe (HEAD -> branch1, master)
+The commit 3fcc8bc813e34558464015b5a2a3ef341d65d2fe is the commit that the HEAD is currently pointing to. The (HEAD -> branch1, master) part indicates the current state of the branches.
+
+HEAD -> branch1 means that the HEAD is currently attached to branch1. This indicates that if you make a new commit, branch1 will move forward with that commit.
+
+master refers to the branch named master, and it also points to the same commit 3fcc8bc813e34558464015b5a2a3ef341d65d2fe.
+
+both head->branch1 , master are pointing to the same commit
